@@ -17,8 +17,8 @@ class CreateAccountPage extends BasePage{
         this.locatorRegisterButton = '#submitAccount'
     }
 
-    expectCreateAccountPage(){
-        cy.url().should('include', 'account-creation')
+    expectCreateAccountPage() {
+        cy.url().should('include', '#account-creation')
     }
 
     fillPersonalInformationForm(user){
