@@ -15,12 +15,18 @@ class MyAccountPage extends Basepage{
     }
 
     expectMyAccountPage(){
-        cy.url().should('include', 'my-account')
+        cy.url().should('include', 'controller=my-account')
     }
+
+    verifyTitleVisible() {
+        cy.get(this.locatorMyAccountTitle).should('be.visible')
+      }
 
     expectAccountCreated(){
         cy.get(this.locatorAccountCreatedAlertSuccess).should('be.visible').and('contain.text',data.account_created_succesfully)
     }
+
+    
 }
 
 export default MyAccountPage
