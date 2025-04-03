@@ -8,6 +8,9 @@ class HeaderComponent extends BasePage {
         this.locatorMainTitle = '[title="My Shop"]'
         this.locatorLoggedIn = '.account'
         this.locatorSignout = '.logout'
+        this.locatorWomenMenu = 'a[title="Women"]'
+        this.locatorSearchInput = '#search_query_top'
+        this.locatorSearchButton = '[name="submit_search"]'
     }
 
     clickContactUs(){
@@ -28,6 +31,15 @@ class HeaderComponent extends BasePage {
 
     clickSignOut(){
         cy.get(this.locatorSignout).click()
+    }
+
+    clickWomenMenu(){
+        cy.get(this.locatorWomenMenu).click()
+    }
+
+    searchBar(name){
+        cy.get(this.locatorSearchInput).type(name)
+        cy.get(this.locatorSearchButton).click()
     }
 
 }
