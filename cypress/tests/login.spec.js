@@ -35,7 +35,7 @@ describe('Login', () => {
     header.expectLoggedIn(Cypress.env('FIRSTNAME'), Cypress.env('LASTNAME'));
   })
 
-  it.only('Connexion de l\'utilisateur avec un email et un mot de passe incorrects', () => {
+  it('Connexion de l\'utilisateur avec un email et un mot de passe incorrects', () => {
     //Arrange
     const userData = {
       email: 'incorrect@email.com',
