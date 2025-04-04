@@ -1,0 +1,5 @@
+{
+    "product_available" : "In stock",
+    "product_unavailable" : "This product is no longer in stock with those attributes but is available with others.",
+    "product_successfully_added": "Product successfully added to your shopping cart"
+}
