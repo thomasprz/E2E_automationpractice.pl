@@ -9,6 +9,7 @@ class ProductsPage extends BasePage{
         this.locatorProductContainer = '.product-container'
         this.locatorProductName = '.product-name'
         this.locatorAlertSearch = '.alert'
+        this.locatorProductPrice = '.product-price'
     }
 
     expectProductsPage(){
@@ -19,8 +20,13 @@ class ProductsPage extends BasePage{
         cy.get(this.locatorProductList).should('be.visible')
     }
 
-    clickProductTitle(name){
-        cy.get(this.locatorProductName).filter((index,element) => Cypress.$(element).text().trim() === name).click()
+    clickProductTitle(product) {
+        cy.get(this.locatorProductContainer).filter((index, element) => {
+            const $el = Cypress.$(element);
+            return $el.text().includes(product.name) && $el.text().includes(product.price);
+        })
+          .find(this.locatorProductName)
+          .click();
     }
 
     expectSearchProduct(search){
