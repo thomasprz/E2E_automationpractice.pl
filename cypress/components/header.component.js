@@ -11,6 +11,8 @@ class HeaderComponent extends BasePage {
         this.locatorWomenMenu = 'a[title="Women"]'
         this.locatorSearchInput = '#search_query_top'
         this.locatorSearchButton = '[name="submit_search"]'
+        this.locatorCheckoutButton = '#button_order_cart'
+        this.locatorCartContainer='.shopping_cart'
     }
 
     clickContactUs(){
